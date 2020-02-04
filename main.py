@@ -36,6 +36,9 @@ def main(country1, country2, year):
     gr.generaBarr(country1,country2,year)
 
     gr.historic(year)
+
+    '''gr.historic(country1)
+    gr.historic(country2)'''
     
     pdf.generaPDF(country1,country2,year)
 
