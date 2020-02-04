@@ -34,10 +34,17 @@ def generaPDF(country1,country2,year):
 
 
     pdf.set_font("Courier",'',14)
-    pdf.cell(270,10, f'Todos los países - {year}',1,1,'C')
+    pdf.cell(135,10, f'Historico - {country1}',1,0,'C')
+    pdf.set_font("Courier",'',14)
+    pdf.cell(135,10, f'Historico - {country2}',1,1,'C')
+    
     pdf.set_text_color(198,21,21)
-    pdf.cell(270,70,'',1,1,'C')
-    pdf.image(f'output/HISTORICO_{year}.png', 50, 120,w=200,h=55)
+    pdf.cell(135,70,'',1,0,'C')
+    pdf.image(f'output/HISTORICO_{country1}.png', 30, 120,w= 100,h=55)
 
+    
+    pdf.set_text_color(198,21,21)
+    pdf.cell(135,70,'',1,1,'C')
+    pdf.image(f'output/HISTORICO_{country2}.png', 160, 120,w=100,h=55)
 
     return pdf.output(f'output/informe_{country1}_{country2}_{year}.pdf','F')

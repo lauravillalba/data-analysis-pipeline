@@ -38,7 +38,7 @@ def generaBarr(country1,country2,year):
     
     q=concat.groupby('country').agg ({'total':'sum',
                                     'ratio':'sum'
-                                    }).sort_values(by=['total'])
+                                    }).sort_values(by=['country'])
     print(f'\n\nTOTAL HORAS DE LUZ VS RATIO EN {year}\n {q} ')
     plt.figure()
     q.plot.bar()
@@ -59,17 +59,17 @@ def historic(year):
     #plt.title(f'TOTAL DE HORAS DE LUZ EN VS RATIO {year} \n TODOS LOS PAISES ')
     plt.savefig(f'output/HISTORICO_{year}.png')
 
-'''def historic(country):
+def histoCountry(country,colores):
     df_countryYearTotal=fn.importa('./output/df_countryYearTotal.csv')
     
     df_histoCountry=df_countryYearTotal.loc[df_countryYearTotal['country']== country]
-    print('Aquí!!\n',df_histoCountry)
+    
     h =(df_histoCountry.groupby("year").agg({
                                             "suicides_no":"sum"
                                             }).sort_values(by=['year']))
-    print(f'\n\HISTORICO DE {country} \n{h}')
+    #print(f'\nHISTORICO DE {country} \n{h}')
     plt.figure()
-    h.plot.bar()
-    #plt.title(f'HISTORICI DE {country} \n')
-    plt.savefig(f'output/HISTORICO_{country}.png')'''
+    h.plot.bar(color=colores)
+    #plt.title(f'HISTORICO DE {country} \n')
+    plt.savefig(f'output/HISTORICO_{country}.png')
     

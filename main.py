@@ -37,8 +37,8 @@ def main(country1, country2, year):
 
     gr.historic(year)
 
-    '''gr.historic(country1)
-    gr.historic(country2)'''
+    gr.histoCountry(country1,colores1)
+    gr.histoCountry(country2,colores2)
     
     pdf.generaPDF(country1,country2,year)
 
